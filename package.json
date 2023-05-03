@@ -1,6 +1,6 @@
 {
   "name": "@hexlet/code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "first project",
   "main": "bin/brain-games.js",
   "type": "module",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/SeriousCat96/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/SeriousCat96/frontend-project-44#readme"
+  "homepage": "https://github.com/SeriousCat96/frontend-project-44#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
