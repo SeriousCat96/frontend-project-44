@@ -1,19 +1,17 @@
 import { writeHelloAndSetName, writeGoal, getUserAnswer, checkAnswer, writeGoodbye } from '../index.js';
-import { getRandomInt } from '../random.js';
-import { gcd } from '../math.js';
+import { getRandomSequence } from '../random.js';
 
 export default function game(questionsCount) {   
     const name = writeHelloAndSetName();
 
-    writeGoal('Find the greatest common divisor of given numbers.');
+    writeGoal('What number is missing in the progression?');
     
     let correctAnswersCount = 0;
 
     do {
-        const first = getRandomInt(1, 100);
-        const second = getRandomInt(1, 100);
-        const userAnswer = parseInt(getUserAnswer(`${first} ${second}`));    
-        const isCorrect = checkAnswer(userAnswer, gcd(first, second));
+        const progression = getRandomSequence(10, 10);
+        const userAnswer = parseInt(getUserAnswer(progression.sequence));    
+        const isCorrect = checkAnswer(userAnswer, progression.element);
         
         if (isCorrect) {
             correctAnswersCount++;
