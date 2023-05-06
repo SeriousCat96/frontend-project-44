@@ -5,4 +5,5 @@
 
 [Brain-even demo](https://asciinema.org/a/FHJShg664jET6DWjXhrewlAoy)
 [Brain-calc demo](https://asciinema.org/a/582980)
-[Brain-calc demo](https://asciinema.org/a/583024)
+[Brain-gcd demo](https://asciinema.org/a/583024)
+[Brain-progression demo](https://asciinema.org/a/583040)
