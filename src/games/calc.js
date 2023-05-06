@@ -1,5 +1,5 @@
-import { writeHelloAndSetName, writeGoal, getUserAnswer, checkAnswer, writeGoodbye } from './index.js';
-import { getRandomOperation } from './random.js';
+import { writeHelloAndSetName, writeGoal, getUserAnswer, checkAnswer, writeGoodbye } from '../index.js';
+import { getRandomOperation } from '../random.js';
 
 export default function game(questionsCount) {   
     const name = writeHelloAndSetName();
