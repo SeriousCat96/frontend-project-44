@@ -4,3 +4,4 @@
 <a href="https://codeclimate.com/github/SeriousCat96/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/528ab17e4fa2f84a2e88/maintainability" /></a>
 
 [Brain-even demo](https://asciinema.org/a/FHJShg664jET6DWjXhrewlAoy)
+[Brain-calc demo](https://asciinema.org/a/582980)
