@@ -7,7 +7,7 @@ export function play(rounds, goalText, questionCallback) {
 
     console.log(`Hello, ${name}!`);
     console.log(goalText);
-    
+
     let correctAnswersCount = 0;
 
     do {
