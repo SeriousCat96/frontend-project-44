@@ -1,42 +1,32 @@
 import readlineSync from 'readline-sync';
 
-export function writeHelloAndSetName() {
+export function play(rounds, goalText, questionCallback) {
     console.log("Welcome to the Brain Games!");
-    
+
     const name = readlineSync.question('May I have your name? ');
-    
+
     console.log(`Hello, ${name}!`);
+    console.log(goalText);
     
-    return name;
-}
+    let correctAnswersCount = 0;
 
-export function writeGoal(text) {
-    console.log(text);
-}
+    do {
+        const { question, correctAnswer } = questionCallback();
+        const userAnswer = readlineSync.question(`Question: ${question} `);
 
-export function getUserAnswer(question) {
-    const userAnswer = readlineSync.question(`Question: ${question} `);
-    console.log(`Your answer: ${userAnswer}`);
+        console.log(`Your answer: ${userAnswer}`);
 
-    return userAnswer;
-}
+        const isCorrect = userAnswer === correctAnswer;
 
-export function checkAnswer(userAnswer, correctAnswer) {
-    const isCorrect = userAnswer === correctAnswer;
-    if (isCorrect) {
-        console.log('Correct!');
-    } else {
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    }
+        if (isCorrect) {
+            correctAnswersCount += 1;
+            console.log('Correct!');
+        } else {
+            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+            console.log(`Let's try again, ${name}!`);
+            return;
+        }
+    } while (correctAnswersCount < rounds);
 
-    return isCorrect;
-}
-
-export function writeGoodbye(name, userIsWin) {
-    if (userIsWin) {
-        console.log(`Congratulations, ${name}!`);
-    }
-    else {
-        console.log(`Let's try again, ${name}!`);
-    }
+    console.log(`Congratulations, ${name}!`);
 }

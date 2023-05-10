@@ -1,32 +1,18 @@
-import { writeHelloAndSetName, writeGoal, getUserAnswer, checkAnswer, writeGoodbye } from '../index.js';
+import { play } from '../index.js';
 import { getRandomInt } from '../random.js';
 import { gcd } from '../math.js';
 
-export default function game(questionsCount) {   
-    const name = writeHelloAndSetName();
+export default function game(rounds) {   
+    play(
+        rounds, 
+        'Find the greatest common divisor of given numbers.', 
+        () => {
+            const first = getRandomInt(1, 100);
+            const second = getRandomInt(1, 100);
+            const question = `${first} ${second}`;
+            const correctAnswer = gcd(first, second).toString();
 
-    writeGoal('Find the greatest common divisor of given numbers.');
-    
-    let correctAnswersCount = 0;
-
-    do {
-        const first = getRandomInt(1, 100);
-        const second = getRandomInt(1, 100);
-        const userAnswer = parseInt(getUserAnswer(`${first} ${second}`));    
-        const isCorrect = checkAnswer(userAnswer, gcd(first, second));
-        
-        if (isCorrect) {
-            correctAnswersCount++;
-        } else {
-            break;
+            return { question, correctAnswer };
         }
-    } while (correctAnswersCount < questionsCount);
-
-    if (correctAnswersCount < questionsCount) {
-        writeGoodbye(name, false);
-    }
-    else {
-        writeGoodbye(name, true);
-    }
+    );
 }
-
