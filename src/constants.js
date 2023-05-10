@@ -1,1 +1,2 @@
-export const rounds = 3;
+const rounds = 3;
+export default rounds;
